@@ -1,0 +1,17 @@
+# Godot-specific files to ignore
+# .godot/ je nejdůležitější a řeší chybu s dlouhým názvem souboru
+.godot/
+.import/
+.export/
+*.translation
+*.import
+*.tmp
+*.log
+
+# System files (Windows/macOS)
+.DS_Store
+Thumbs.db
+
+# VSCode / Editor (pokud používáš)
+.vscode/
+.idea/
