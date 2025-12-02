@@ -169,7 +169,7 @@ position = Vector2(47, 98.5)
 shape = SubResource("CapsuleShape2D_u4tm5")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(47, 97.00001)
+position = Vector2(47, 98.00001)
 scale = Vector2(0.3344726, 0.42089844)
 sprite_frames = SubResource("SpriteFrames_x3vy7")
 animation = &"idle"

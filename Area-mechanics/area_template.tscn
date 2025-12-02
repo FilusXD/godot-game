@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c1fl5dil42q11"]
+[gd_scene load_steps=12 format=4 uid="uid://c1fl5dil42q11"]
 
 [ext_resource type="Texture2D" uid="uid://bco5x4m16dmcj" path="res://sprites/tiles.png" id="1_a0ss0"]
 [ext_resource type="Texture2D" uid="uid://j8ljj7qqvrop" path="res://sprites/icon.svg" id="2_opasl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bmsyri6xrs61j" path="res://Area-mechanics/area_exit.tscn" id="4_40cx0"]
 [ext_resource type="PackedScene" uid="uid://b3ndiaefoiqga" path="res://player.tscn" id="4_j4wur"]
 [ext_resource type="Script" uid="uid://duldjod8pwjgm" path="res://Scripts/player.gd" id="5_rfufl"]
+[ext_resource type="PackedScene" uid="uid://dq7jgn7c5cc28" path="res://blue_fire.tscn" id="7_cpu4u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_na0ha"]
 texture = ExtResource("1_a0ss0")
@@ -423,3 +424,17 @@ script = ExtResource("5_rfufl")
 position = Vector2(47.5, 88.5)
 scale = Vector2(0.5, 0.5)
 zoom = Vector2(3, 3)
+
+[node name="BlueFire" type="Node2D" parent="."]
+
+[node name="BlueFire" parent="BlueFire" instance=ExtResource("7_cpu4u")]
+position = Vector2(196, 308)
+
+[node name="BlueFire2" parent="BlueFire" instance=ExtResource("7_cpu4u")]
+position = Vector2(219, 308)
+
+[node name="BlueFire3" parent="BlueFire" instance=ExtResource("7_cpu4u")]
+position = Vector2(263, 309)
+
+[node name="BlueFire4" parent="BlueFire" instance=ExtResource("7_cpu4u")]
+position = Vector2(240, 309)
