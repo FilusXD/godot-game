@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://c1fl5dil42q11"]
+[gd_scene load_steps=16 format=4 uid="uid://c1fl5dil42q11"]
 
 [ext_resource type="Texture2D" uid="uid://bco5x4m16dmcj" path="res://sprites/tiles.png" id="1_a0ss0"]
+[ext_resource type="Texture2D" uid="uid://cof2a1fwr12sk" path="res://sprites/parallax-00.png" id="1_afew5"]
 [ext_resource type="Texture2D" uid="uid://j8ljj7qqvrop" path="res://sprites/icon.svg" id="2_opasl"]
+[ext_resource type="Texture2D" uid="uid://bq38vojks1u77" path="res://sprites/parallax-01.png" id="2_r2g5j"]
+[ext_resource type="Texture2D" uid="uid://bvbtgj3xooccn" path="res://sprites/parallax-02.png" id="3_608yd"]
 [ext_resource type="Texture2D" uid="uid://bp6crdkv8e4c7" path="res://sprites/tiles_1.png" id="3_qwmfq"]
 [ext_resource type="PackedScene" uid="uid://bmsyri6xrs61j" path="res://Area-mechanics/area_exit.tscn" id="4_40cx0"]
+[ext_resource type="Texture2D" uid="uid://bu38nlyv0wjm1" path="res://sprites/parallax-03.png" id="4_45til"]
 [ext_resource type="PackedScene" uid="uid://b3ndiaefoiqga" path="res://player.tscn" id="4_j4wur"]
 [ext_resource type="Script" uid="uid://duldjod8pwjgm" path="res://Scripts/player.gd" id="5_rfufl"]
 [ext_resource type="PackedScene" uid="uid://dq7jgn7c5cc28" path="res://blue_fire.tscn" id="7_cpu4u"]
@@ -407,6 +411,40 @@ sources/2 = SubResource("TileSetAtlasSource_dwbse")
 
 [node name="world" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 220)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1440, 350)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_afew5")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 100)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("2_r2g5j")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 100)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("3_608yd")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 100)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("4_45til")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAASABkAAgACAAYAAAASABgAAgACAAUAAAASABcAAgACAAUAAAASABYAAgACAAUAAAASABUAAgACAAUAAAASABQAAgACAAQAAAARABkAAgABAAYAAAARABgAAgABAAUAAAARABcAAgABAAUAAAARABYAAgABAAUAAAARABUAAgABAAUAAAARABQAAgABAAQAAAAQABkAAgABAAYAAAAQABgAAgABAAUAAAAQABcAAgABAAUAAAAQABYAAgABAAUAAAAQABUAAgABAAUAAAAQABQAAgABAAQAAAAPABkAAgABAAYAAAAPABgAAgABAAUAAAAPABcAAgABAAUAAAAPABYAAgABAAUAAAAPABUAAgABAAUAAAAPABQAAgABAAQAAAAOABkAAgABAAYAAAAOABgAAgABAAUAAAAOABcAAgABAAUAAAAOABYAAgABAAUAAAAOABUAAgABAAUAAAAOABQAAgABAAQAAAANABkAAgABAAYAAAANABgAAgABAAUAAAANABcAAgABAAUAAAANABYAAgABAAUAAAANABUAAgABAAUAAAANABQAAgABAAQAAAAMABkAAgABAAYAAAAMABgAAgABAAUAAAAMABcAAgABAAUAAAAMABYAAgABAAUAAAAMABUAAgABAAUAAAAMABQAAgABAAQAAAALABkAAgABAAYAAAALABgAAgABAAUAAAALABcAAgABAAUAAAALABYAAgABAAUAAAALABUAAgABAAUAAAALABQAAgABAAQAAAAKABkAAgABAAYAAAAKABgAAgABAAUAAAAKABcAAgABAAUAAAAKABYAAgABAAUAAAAKABUAAgABAAUAAAAKABQAAgABAAQAAAAJABkAAgABAAYAAAAJABgAAgABAAUAAAAJABcAAgABAAUAAAAJABYAAgABAAUAAAAJABUAAgABAAUAAAAJABQAAgABAAQAAAAIABkAAgABAAYAAAAIABgAAgABAAUAAAAIABcAAgABAAUAAAAIABYAAgABAAUAAAAIABUAAgABAAUAAAAIABQAAgABAAQAAAAHABkAAgABAAYAAAAHABgAAgABAAUAAAAHABcAAgABAAUAAAAHABYAAgABAAUAAAAHABUAAgABAAUAAAAHABQAAgABAAQAAAAGABkAAgABAAYAAAAGABgAAgABAAUAAAAGABcAAgABAAUAAAAGABYAAgABAAUAAAAGABUAAgABAAUAAAAGABQAAgABAAQAAAAFABkAAgABAAYAAAAFABgAAgABAAUAAAAFABcAAgABAAUAAAAFABYAAgABAAUAAAAFABUAAgABAAUAAAAFABQAAgABAAQAAAAEABkAAgABAAYAAAAEABgAAgABAAUAAAAEABcAAgABAAUAAAAEABYAAgABAAUAAAAEABUAAgABAAUAAAAEABQAAgABAAQAAAADABkAAgABAAYAAAADABgAAgABAAUAAAADABcAAgABAAUAAAADABYAAgABAAUAAAADABUAAgABAAUAAAADABQAAgABAAQAAAACABkAAgABAAYAAAACABgAAgABAAUAAAACABcAAgABAAUAAAACABYAAgABAAUAAAACABUAAgABAAUAAAACABQAAgABAAQAAAABABkAAgABAAYAAAABABgAAgABAAUAAAABABcAAgABAAUAAAABABYAAgABAAUAAAABABUAAgABAAUAAAABABQAAgABAAQAAAAAABkAAgAAAAYAAAAAABgAAgAAAAUAAAAAABcAAgAAAAUAAAAAABYAAgAAAAUAAAAAABUAAgAAAAUAAAAAABQAAgAAAAQAAAA=")
 tile_set = SubResource("TileSet_d37ni")
@@ -426,6 +464,7 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(3, 3)
 
 [node name="BlueFire" type="Node2D" parent="."]
+position = Vector2(9, 3)
 
 [node name="BlueFire" parent="BlueFire" instance=ExtResource("7_cpu4u")]
 position = Vector2(196, 308)

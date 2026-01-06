@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name PlayerController
 
-const SPEED = 300.0
+const SPEED = 230.0
 const JUMP_VELOCITY = -300.0
 const ATTACK_DURATION = 0.4 # délka animace v sekundách
 const FALL_THROUGH_TIME = 0.3 # jak dlouho bude vypnutá kolize
